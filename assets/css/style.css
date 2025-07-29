@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+  --primary-color: rgb(17, 86, 102);
+  --primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--primary-color);
+  font-family: 'Open sans', sans-serif;
+}
+
+.container {
+  max-width: 60rem;
+  margin: 50px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container h1{
+  text-align: center;
+  font-size: 3rem;
+}
+
+.funil-leads{
+  display: flex;
+  flex-direction: column;
+}
+
+.funil-leads h2{
+  font-size: 1.8rem;
+  background-color: rgb(137, 169, 206);
+  padding: .5rem;
+  border-radius: 5px;
+  color: white;
+}
+
+.cliques-div h2, .leads-div h2, .vendas-div h2, .metricas-div h2{
+  font-size: 1.6rem;
+  background-color: rgb(226, 226, 226);
+  padding: .5rem;
+  border-radius: 5px;
+  color: black;
+  font-weight: 500;
+}
+
+
+.funil-leads-campos, .clique-campos, .leads-div, .vendas-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.2rem 0;
+  gap: 1rem;
+}
+
+.funil-leads-campos div, .clique-campos div{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+input{
+  padding: .3rem;
+}
+
+.leads-campos div, .vendas-campos div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  padding: .6rem 0;
+}
+
+
+.btn-calc{
+  margin: 3rem 0;
+  width: 200px;
+  height: 30px;
+  align-self: center;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.btn-calc:hover{
+  background-color: rgb(45, 121, 165);
+}
+
+.metricas-campos{
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  justify-content: space-between;
+  gap: 1.4rem;
+  padding: .6rem 0;
+}
+
+
+
+.metricas-campos-div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.metricas-campos-div div{
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+}
+
+.p-metricas{
+  font-weight: 500;
+}
