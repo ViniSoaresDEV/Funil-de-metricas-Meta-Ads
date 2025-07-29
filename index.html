@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modelo</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <section class="container">
+    <h1>Funil de Métricas</h1>
+    <div class="funil-leads">
+      <h2>Funil de leads</h2>
+      <div class="funil-leads-campos">
+        <div>
+          <p>Investimento em tráfego</p>
+          <input type="text" id="investimento-trafego">
+        </div>
+        <div>
+          <p>Ticket médio</p>
+          <input type="text" id="ticket-medio">
+        </div>
+        <div>
+          <p>Impressões</p>
+          <input type="text" id="impressoes">
+        </div>
+      </div>
+    </div>
+
+    <div class="cliques-div">
+      <h2>Cliques</h2>
+      <div class="clique-campos">
+        <div>
+          <p>Cliques</p>
+          <input type="text" id="cliques">
+        </div>
+        <div>
+          <p>Taxa de cliques</p>
+          <p id="resultado-taxa-cliques">%</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="leads-div">
+      <h2>Leads</h2>
+      <div class="leads-campos">
+        <div>
+          <p>Leads</p>
+          <input type="text" id="leads">
+        </div>
+        <div>
+          <p>Taxa de conversão em leads</p>
+          <p id="resultado-taxa-leads">%</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vendas-div">
+      <h2>Vendas</h2>
+      <div class="vendas-campos">
+        <div>
+          <p>Vendas</p>
+          <input type="text" id="vendas">
+        </div>
+        <div>
+          <p>Taxa de conversão em vendas</p>
+          <p id="resultado-taxa-vendas">%</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="metricas-div">
+      <h2>Métricas financeiras</h2>
+      <div class="metricas-campos">
+        <div class="metricas-campos-div">
+          <div>
+            <p class="p-metricas">CPM</p>
+            <p id="cpm-value">R$</p>
+          </div>
+          <div>
+            <p class="p-metricas">CPC</p>
+            <p id="cpc-value">R$</p>
+          </div>
+        </div>
+        <div class="metricas-campos-div">
+          <div>
+            <p class="p-metricas">CPA lead</p>
+            <p id="cpa-lead-value">R$</p>
+          </div>
+          <div>
+            <p class="p-metricas">CPA venda</p>
+            <p id="cpa-venda-value">R$</p>
+          </div>
+        </div>
+        <div class="metricas-campos-div">
+          <div>
+            <p class="p-metricas">Faturamento Bruto</p>
+            <p id="faturamento-bruto-value">R$</p>
+          </div>
+          <div>
+            <p class="p-metricas">ROAS</p>
+            <p id="roas-value">%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="btn" class="btn-calc">Calcular</button>
+
+  </section>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
