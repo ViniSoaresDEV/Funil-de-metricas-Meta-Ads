@@ -61,14 +61,14 @@ btn.addEventListener('click', e => {
 function calculaCliques(cliques, impressoes) {
   const calculoCliques =  (cliques / impressoes) * 100;
 
-  exibeResultadosCliques(calculoCliques);
+  exibeResultadosCliques(calculoCliques.toFixed(2));
 }
 
 //Calculando taxa de conversão de leads
 function calculaLeads(leads, cliques){
   const calculoLeads = (leads / cliques) * 100;
 
-  exibeResultadosLeads(calculoLeads);
+  exibeResultadosLeads(calculoLeads.toFixed(2));
 }
 
 
@@ -76,38 +76,43 @@ function calculaLeads(leads, cliques){
 function calculaVendas(vendas, leads) {
   const calculoVendas =  (vendas / leads) * 100;
 
-  exibeResultadosVendas(calculoVendas);
+  exibeResultadosVendas(calculoVendas.toFixed(2));
 }
 
 
 //Calculando taxa de CPM nas métricas
 function calculaCPM(investimentoTrafego, impressoes){
   const calculoCPM = (investimentoTrafego / impressoes) * 1000;
-  exibeResultadosCPM(calculoCPM);
+  exibeResultadosCPM(calculoCPM.toFixed(2));
 }
 
 //Calculando taxa de CPC nas métricas
 function calculaCPC(investimentoTrafego, cliques){
   const calculoCPC = investimentoTrafego / cliques;
-  exibeResultadosCPC(calculoCPC);
+  exibeResultadosCPC(calculoCPC.toFixed(2));
 }
 
 //Calculando taxa de CPA Lead nas métricas
 function calculaCPALead(investimentoTrafego, leads){
   const calculoCPALead = investimentoTrafego / leads;
-  exibeResultadosCPALeads(calculoCPALead);
+  exibeResultadosCPALeads(calculoCPALead.toFixed(2));
 }
 
 //Calculando taxa de CPA Venda nas métricas
 function calculaCPAVenda(investimentoTrafego, vendas){
-  const calculoCPAVenda = investimentoTrafego / vendas;
-  exibeResultadosCPAVendas(calculoCPAVenda);
+  let calculoCPAVenda = investimentoTrafego / vendas;
+  if(vendas > 0){
+    exibeResultadosCPAVendas(calculoCPAVenda.toFixed(2));
+  }else{
+    calculoCPAVenda = '-';
+    exibeResultadosCPAVendas(calculoCPAVenda);
+  }
 }
 
 //Calcula faturamento bruto nas métricas
 function calculaFaturamentoBruto(vendas, ticketMedio){
   const calculoFaturamentoBruto = vendas * ticketMedio;
-  exibeResultadosFaturamento(calculoFaturamentoBruto);
+  exibeResultadosFaturamento(calculoFaturamentoBruto.toFixed(2));
 }
 
 //Calcula ROAS nas métricas
@@ -117,10 +122,13 @@ function calculaROAS(vendas, ticketMedio, investimentoTrafego){
   let calculoRoas = 0
   if(calculoLucro > 0){
     calculoRoas = `+${(calculoLucro / investimentoTrafego) * 100}`;
+    exibeResultadosROAS(calculoRoas);
+    console.log(calculoRoas)
   }else{
-    calculoRoas = `-${(calculoLucro / investimentoTrafego) * 100}`;
+    calculoRoas = 0;
+    exibeResultadosROAS(calculoRoas);
   }
-  exibeResultadosROAS(calculoRoas);
+  
 }
 
 
@@ -128,42 +136,42 @@ function calculaROAS(vendas, ticketMedio, investimentoTrafego){
 
 //Exibe resultado de taxa de cliques
 function exibeResultadosCliques(calculoCliques){
-  resTaxaCliques.innerHTML = `${calculoCliques.toFixed(2)}%`
+  resTaxaCliques.innerHTML = `${calculoCliques}%`
 }
 
 //Exibe resultado de taxa de ledas
 function exibeResultadosLeads(calculoLeads){
-  resTaxaLeads.innerHTML = `${calculoLeads.toFixed(2)}%`
+  resTaxaLeads.innerHTML = `${calculoLeads}%`
 }
 
 //Exibe resultado de taxa de vendas
 function exibeResultadosVendas(calculoVendas){
-  resTaxaVendas.innerHTML = `${calculoVendas.toFixed(2)}%`
+  resTaxaVendas.innerHTML = `${calculoVendas}%`
 }
 
 //Exibe resultado do CPM nas métricas
 function exibeResultadosCPM(calculoCPM){
-  cpmValor.innerHTML = `R$${calculoCPM.toFixed(2)}`;
+  cpmValor.innerHTML = `R$ ${calculoCPM}`;
 }
 
 //Exibe resultado do CPC nas métricas
 function exibeResultadosCPC(calculoCPC){
-  cpcValor.innerHTML = `R$${calculoCPC.toFixed(2)}`;
+  cpcValor.innerHTML = `R$ ${calculoCPC}`;
 }
 
 //Exibe resultado do CPA Leads nas métricas
 function exibeResultadosCPALeads(calculoCPALead){
-  cpaLeadValor.innerHTML = `R$${calculoCPALead.toFixed(2)}`;
+  cpaLeadValor.innerHTML = `R$ ${calculoCPALead}`;
 }
 
 //Exibe resultado do CPA Vendas nas métricas
 function exibeResultadosCPAVendas(calculoCPAVenda){
-  cpaVendaValor.innerHTML = `R$${calculoCPAVenda.toFixed(2)}`;
+  cpaVendaValor.innerHTML = `R$ ${calculoCPAVenda}`;
 }
 
 //Exibe resultado do Faturamento Bruto nas métricas
 function exibeResultadosFaturamento(calculoFaturamentoBruto){
-  faturamentoBruto.innerHTML = `R$${calculoFaturamentoBruto.toFixed(2)}`;
+  faturamentoBruto.innerHTML = `R$ ${calculoFaturamentoBruto}`;
 }
 
 //Exibe resultado do ROAS nas métricas
