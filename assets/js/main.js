@@ -39,11 +39,11 @@ btn.addEventListener('click', e => {
     }
   }
 
-  calculaCliques(Number(cliques.value), Number(impressoes.value));
+  calculaCliques(Number(cliques.value), Number(impressoes.value.replace(/\./g, "")));
   calculaLeads(Number(leads.value), Number(cliques.value));
   calculaVendas(Number(vendas.value), Number(leads.value));
 
-  calculaCPM(Number(investimentoTrafego.value), Number(impressoes.value));
+  calculaCPM(Number(investimentoTrafego.value), Number(impressoes.value.replace(/\./g, "")));
   calculaCPC(Number(investimentoTrafego.value), Number(cliques.value));
 
   calculaCPALead(Number(investimentoTrafego.value), Number(leads.value));
@@ -60,6 +60,7 @@ btn.addEventListener('click', e => {
 //Calculando taxa de conversão de cliques
 function calculaCliques(cliques, impressoes) {
   const calculoCliques =  (cliques / impressoes) * 100;
+  console.log(cliques/impressoes);
 
   exibeResultadosCliques(calculoCliques.toFixed(2));
 }
