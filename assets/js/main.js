@@ -136,63 +136,68 @@ function calculaROAS(vendas, ticketMedio, investimentoTrafego){
 
 //Exibindo resultados
 
-//Exibe resultado de taxa de cliques
-function exibeResultadosCliques(calculoCliques){
-  resTaxaCliques.style.fontWeight = '600';
-  resTaxaCliques.innerHTML = `${calculoCliques}%`
-}
-
-//Exibe resultado de taxa de ledas
-function exibeResultadosLeads(calculoLeads){
-  resTaxaLeads.style.fontWeight = '600';
-  resTaxaLeads.innerHTML = `${calculoLeads}%`
-}
-
-//Exibe resultado de taxa de vendas
-function exibeResultadosVendas(calculoVendas){
-  resTaxaVendas.style.fontWeight = '600';
-  resTaxaVendas.innerHTML = `${calculoVendas}%`
-}
-
-//Exibe resultado do CPM nas métricas
-function exibeResultadosCPM(calculoCPM){
-  cpmValor.style.fontWeight = '600';
-  cpmValor.innerHTML = `R$ ${calculoCPM.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-}
-
-//Exibe resultado do CPC nas métricas
-function exibeResultadosCPC(calculoCPC){
-  cpcValor.style.fontWeight = '600';
-  cpcValor.innerHTML = `R$ ${calculoCPC.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-}
-
-//Exibe resultado do CPA Leads nas métricas
-function exibeResultadosCPALeads(calculoCPALead){
-  cpaLeadValor.style.fontWeight = '600';
-  cpaLeadValor.innerHTML = `R$ ${calculoCPALead.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-}
-
-//Exibe resultado do CPA Vendas nas métricas
-function exibeResultadosCPAVendas(calculoCPAVenda){
-  cpaVendaValor.style.fontWeight = '600';
-  cpaVendaValor.innerHTML = `R$ ${calculoCPAVenda.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-}
-
-//Exibe resultado do Faturamento Bruto nas métricas
-function exibeResultadosFaturamento(calculoFaturamentoBruto){
-  if(calculoFaturamentoBruto > Number(investimentoTrafego.value)){
-    faturamentoBruto.style.color = 'green';
-    faturamentoBruto.style.fontWeight = '600';
-    faturamentoBruto.innerHTML = `R$ ${calculoFaturamentoBruto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-  }else{
-    faturamentoBruto.style.color = 'red';
-    faturamentoBruto.style.fontWeight = '600';
-    faturamentoBruto.innerHTML = `R$ ${calculoFaturamentoBruto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+try{
+  //Exibe resultado de taxa de cliques
+  function exibeResultadosCliques(calculoCliques){
+    resTaxaCliques.style.fontWeight = '600';
+    resTaxaCliques.innerHTML = `${calculoCliques}%`
   }
-}
 
-//Exibe resultado do ROAS nas métricas
-function exibeResultadosROAS(resROAS, roasPercentual){
-  roas.style.fontWeight = '600';
-  roas.innerHTML = `R$ ${Number(resROAS).toFixed(2)} / ${roasPercentual.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}%`;
+  //Exibe resultado de taxa de ledas
+  function exibeResultadosLeads(calculoLeads){
+    resTaxaLeads.style.fontWeight = '600';
+    resTaxaLeads.innerHTML = `${calculoLeads}%`
+  }
+
+  //Exibe resultado de taxa de vendas
+  function exibeResultadosVendas(calculoVendas){
+    resTaxaVendas.style.fontWeight = '600';
+    resTaxaVendas.innerHTML = `${calculoVendas}%`
+  }
+
+  //Exibe resultado do CPM nas métricas
+  function exibeResultadosCPM(calculoCPM){
+    cpmValor.style.fontWeight = '600';
+    cpmValor.innerHTML = `R$ ${calculoCPM.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+  }
+
+  //Exibe resultado do CPC nas métricas
+  function exibeResultadosCPC(calculoCPC){
+    cpcValor.style.fontWeight = '600';
+    cpcValor.innerHTML = `R$ ${calculoCPC.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+  }
+
+  //Exibe resultado do CPA Leads nas métricas
+  function exibeResultadosCPALeads(calculoCPALead){
+    cpaLeadValor.style.fontWeight = '600';
+    cpaLeadValor.innerHTML = `R$ ${calculoCPALead.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+  }
+
+  //Exibe resultado do CPA Vendas nas métricas
+  function exibeResultadosCPAVendas(calculoCPAVenda){
+    cpaVendaValor.style.fontWeight = '600';
+    cpaVendaValor.innerHTML = `R$ ${calculoCPAVenda.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+  }
+
+  //Exibe resultado do Faturamento Bruto nas métricas
+  function exibeResultadosFaturamento(calculoFaturamentoBruto){
+    if(calculoFaturamentoBruto > Number(investimentoTrafego.value)){
+      faturamentoBruto.style.color = 'green';
+      faturamentoBruto.style.fontWeight = '600';
+      faturamentoBruto.innerHTML = `R$ ${calculoFaturamentoBruto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    }else{
+      faturamentoBruto.style.color = 'red';
+      faturamentoBruto.style.fontWeight = '600';
+      faturamentoBruto.innerHTML = `R$ ${calculoFaturamentoBruto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    }
+  }
+
+  //Exibe resultado do ROAS nas métricas
+  function exibeResultadosROAS(resROAS, roasPercentual){
+    roas.style.fontWeight = '600';
+    roas.innerHTML = `R$ ${Number(resROAS).toFixed(2)} / ${roasPercentual.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}%`;
+  }
+
+}catch(e){
+  console.error('Erro ao exibir resultados:', e);
 }
