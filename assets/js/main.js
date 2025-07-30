@@ -119,11 +119,12 @@ function calculaFaturamentoBruto(vendas, ticketMedio){
 //Calcula ROAS nas métricas
 function calculaROAS(vendas, ticketMedio, investimentoTrafego){
   const calculoFaturamentoBruto = vendas * ticketMedio;
-  const calculoLucro = calculoFaturamentoBruto - investimentoTrafego;
-  let calculoRoas = 0
-  if(calculoLucro > 0){
-    calculoRoas = `+${(calculoLucro / investimentoTrafego) * 100}`;
-    exibeResultadosROAS(calculoRoas);
+  // const calculoLucro = calculoFaturamentoBruto - investimentoTrafego;
+  let calculoRoas = calculoFaturamentoBruto / investimentoTrafego;
+  let roasPercentual = calculoRoas * 100;
+  if(calculoRoas > 0){
+    calculoRoas = `+${calculoRoas}`;
+    exibeResultadosROAS(calculoRoas, roasPercentual);
     console.log(calculoRoas)
   }else{
     calculoRoas = 0;
@@ -176,6 +177,6 @@ function exibeResultadosFaturamento(calculoFaturamentoBruto){
 }
 
 //Exibe resultado do ROAS nas métricas
-function exibeResultadosROAS(resROAS){
-  roas.innerHTML = `${resROAS}%`;
+function exibeResultadosROAS(resROAS, roasPercentual){
+  roas.innerHTML = `R$ ${Number(resROAS).toFixed(2)} / ${Number(roasPercentual).toFixed(2)}%`;
 }
