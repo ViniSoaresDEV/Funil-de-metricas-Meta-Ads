@@ -113,7 +113,7 @@ function calculaCPAVenda(investimentoTrafego, vendas){
 //Calcula faturamento bruto nas métricas
 function calculaFaturamentoBruto(vendas, ticketMedio){
   const calculoFaturamentoBruto = vendas * ticketMedio;
-  exibeResultadosFaturamento(calculoFaturamentoBruto.toFixed(2));
+  exibeResultadosFaturamento(calculoFaturamentoBruto);
 }
 
 //Calcula ROAS nas métricas
@@ -153,30 +153,30 @@ function exibeResultadosVendas(calculoVendas){
 
 //Exibe resultado do CPM nas métricas
 function exibeResultadosCPM(calculoCPM){
-  cpmValor.innerHTML = `R$ ${calculoCPM}`;
+  cpmValor.innerHTML = `R$ ${calculoCPM.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
 }
 
 //Exibe resultado do CPC nas métricas
 function exibeResultadosCPC(calculoCPC){
-  cpcValor.innerHTML = `R$ ${calculoCPC}`;
+  cpcValor.innerHTML = `R$ ${calculoCPC.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
 }
 
 //Exibe resultado do CPA Leads nas métricas
 function exibeResultadosCPALeads(calculoCPALead){
-  cpaLeadValor.innerHTML = `R$ ${calculoCPALead}`;
+  cpaLeadValor.innerHTML = `R$ ${calculoCPALead.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
 }
 
 //Exibe resultado do CPA Vendas nas métricas
 function exibeResultadosCPAVendas(calculoCPAVenda){
-  cpaVendaValor.innerHTML = `R$ ${calculoCPAVenda}`;
+  cpaVendaValor.innerHTML = `R$ ${calculoCPAVenda.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
 }
 
 //Exibe resultado do Faturamento Bruto nas métricas
 function exibeResultadosFaturamento(calculoFaturamentoBruto){
-  faturamentoBruto.innerHTML = `R$ ${calculoFaturamentoBruto}`;
+  faturamentoBruto.innerHTML = `R$ ${calculoFaturamentoBruto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
 }
 
 //Exibe resultado do ROAS nas métricas
 function exibeResultadosROAS(resROAS, roasPercentual){
-  roas.innerHTML = `R$ ${Number(resROAS).toFixed(2)} / ${Number(roasPercentual).toFixed(2)}%`;
+  roas.innerHTML = `R$ ${Number(resROAS).toFixed(2)} / ${roasPercentual.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}%`;
 }
