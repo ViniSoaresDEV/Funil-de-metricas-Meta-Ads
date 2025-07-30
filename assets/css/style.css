@@ -130,3 +130,76 @@ input{
 .p-metricas{
   font-weight: 500;
 }
+
+@media only screen and (max-width: 320px) {
+
+  .container{
+    width: 90%;
+  }
+
+  input{
+    width: 80px;
+  }
+
+  h1{
+    margin-bottom: 1.5rem;
+  }
+
+  h2{
+    margin: .6rem 0;
+  }
+
+  .metricas-campos, .metricas-campos-div{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .metricas-campos-div{
+    gap: 2rem;
+  }
+}
+
+@media only screen and (min-width: 321px ) and (max-width: 767px ) {
+
+  .container{
+    width: 90%;
+  }
+
+  input{
+    width: 80px;
+  }
+
+  h1{
+    margin-bottom: 1.5rem;
+  }
+
+  h2{
+    margin: .6rem 0;
+  }
+
+  .metricas-campos, .metricas-campos-div{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    width: 100%;
+    
+  }
+
+  .metricas-campos-div{
+    gap: 2rem;
+    justify-content: space-between;
+    
+  }
+
+  .metricas-campos-div div{
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 322px ) and (max-width:767px) {
+
+ input{
+  width: 100px;
+ }
+}
